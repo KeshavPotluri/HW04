@@ -22,17 +22,38 @@
 ################################################################################
 # Imports
 
+import math
 
 # Body
 
+def eval_loop():
+	# Initialize the evaluated value for display if the user types 'done' in the first try
+	evaluatedValue = ''
 
+	while True:
+		# Get the user input
+		userInput = raw_input("Enter the expression to be evaluated: ")
+
+		# If the user input is 'done' then exit the function and display the last result
+		if userInput == 'done':
+			print "The Last result was: " + str(evaluatedValue)
+			break
+		# Display the result of the expression and prompt the user to type in the next expression
+		else :
+			try:
+				evaluatedValue = eval(userInput)
+			except:
+				print "Please enter an expresson"
+			else:
+				print "The result is: " + str(evaluatedValue)
+
+	
 
 
 ################################################################################
 def main():
-    pass # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    # pass # Remove this line and uncomment below once eval_loop is defined.
+    eval_loop()
     
-
 if __name__ == '__main__':
     main()

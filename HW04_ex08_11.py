@@ -20,6 +20,9 @@ def any_lowercase1(s):
             return True
         else:
             return False
+# The above function is wrong because it will only check whether the first char of 
+# the string is lower case. For eg : any_lowercase1("Asd") will give a output as false
+# while any_lowercase1("aSD") will return true.
 
 def any_lowercase2(s):
     """Explain what is wrong, if anything, here.
@@ -29,6 +32,8 @@ def any_lowercase2(s):
             return 'True'
         else:
             return 'False'
+# The above function is wrong because it will always return True. It will check if 
+# the character "c" is lower. Which is true always.
 
 def any_lowercase3(s):
     """Explain what is wrong, if anything, here.
@@ -37,6 +42,10 @@ def any_lowercase3(s):
         flag = c.islower()
     return flag
 
+# The above function is wrong because it will only check whether the last char of 
+# the string is lower case. For eg : any_lowercase3("asD") will give a output as false
+# while any_lowercase3("Asd") will return true.
+
 def any_lowercase4(s):
     """Explain what is wrong, if anything, here.
     """
@@ -44,6 +53,7 @@ def any_lowercase4(s):
     for c in s:
         flag = flag or c.islower()
     return flag
+# The above function is correct.
 
 def any_lowercase5(s):
     """Explain what is wrong, if anything, here.
@@ -53,6 +63,11 @@ def any_lowercase5(s):
             return False
     return True
 
+# The above function is incorrect because, as soon as the for loop encounters an
+# upper case letter, it will return false which is incorrect For eg : 
+# any_lowercase1("asD"). The function will check if all the letters in the word
+# are lower case.
+
 ################################################################################
 def main():
 
@@ -60,7 +75,10 @@ def main():
     # call that function with a string for which the function returns
     # incorrectly.
     # ex.: any_lowercase_("thisstringmessesupthefunction")
-    print("Hello World!")
+    print any_lowercase1("Asd")
+    print any_lowercase2("Asd")
+    print any_lowercase3("AsD")
+    print any_lowercase5("asD")
     
 
 if __name__ == '__main__':

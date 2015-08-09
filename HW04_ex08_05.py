@@ -20,6 +20,20 @@
 
 # Body
 
+def count(inputString, inputLetter):
+	count = 0
+
+	word = str(inputString)
+	letter = str(inputLetter)
+
+	if len(letter) != 1:
+		print "Please enter a letter in the second argument."
+	else:
+		for char in word:
+			if char == letter:
+				count = count + 1
+		print "The letter " + letter + " is repeated " + str(count) + " times in the word " + word +"."
+
 
 
 
@@ -28,7 +42,13 @@ def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!") 
+    # print("Hello World!") 
+
+    count(1,2)
+    count("Hello",2)
+    count("Hello","l")
+    count("Hello","ue")
+    count(111111,1)
     
 
 if __name__ == '__main__':
